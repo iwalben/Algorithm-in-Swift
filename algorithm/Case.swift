@@ -15,7 +15,38 @@ class Case: NSObject {
 
 // MARK:0-链表反转
 class Solution_0 {
+    func reverseList(_ head: ListNode?) -> String? {
+        var curr = head ,prev : ListNode? = nil
+        while curr != nil {
+            let temp = curr?.next
+            curr?.next = prev
+            prev = curr
+            curr = temp
+        }
+        
+        var endstring = ""
+        while prev != nil {
+            endstring = endstring + String(prev!.val)
+            prev = prev?.next
+        }
+        return endstring
+    }
     
+    
+    func creatNodeList(list:[Int]!) -> ListNode? {
+        var pre = ListNode(list[0]) ,head = pre , j = 0
+        for val in list {
+            if j == 0 {
+                j += 1
+                continue
+            }
+            let temp = ListNode(val)
+            pre.next = temp
+            pre = temp
+            j += 1
+        }
+        return head
+    }
 }
 
 

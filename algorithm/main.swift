@@ -10,8 +10,9 @@ import Foundation
 
 //0-链表反转
 //https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/
-
-
+let s0 = Solution_0()
+let list0 = s0.creatNodeList(list: [1,2,3,4,5])
+print("0-链表反转 " + s0.reverseList(list0)!)
 
 //1-环形链表判断链表是否有环
 //https://leetcode-cn.com/problems/linked-list-cycle/
