@@ -34,16 +34,14 @@ class Solution_0 {
     
     
     func creatNodeList(list:[Int]!) -> ListNode? {
-        var pre = ListNode(list[0]) ,head = pre , j = 0
-        for val in list {
-            if j == 0 {
-                j += 1
+        var pre = ListNode(list[0]) ,head = pre
+        for (index,val) in list.enumerated() {
+            if index == 0 {
                 continue
             }
             let temp = ListNode(val)
             pre.next = temp
             pre = temp
-            j += 1
         }
         return head
     }
@@ -64,19 +62,17 @@ class Solution_1 {
     }
     
     func creatNodeList(list:[Int]!,n:Int) -> ListNode? {
-        var pre = ListNode(list[0]) , rear = pre ,head = pre ,forward : ListNode! ,j = 0
-        for i in list {
-            if j == 0{
-                j += 1
+        var pre = ListNode(list[0]) , rear = pre ,head = pre ,forward : ListNode!
+        for (index,value) in list.enumerated() {
+            if index == 0{
                 continue
             }
-            let temp = ListNode(i)
+            let temp = ListNode(value)
             pre.next = temp
             pre = temp
-            if j == n {
+            if index == n {
                 forward = temp
             }
-            j += 1
         }
         
         while rear.next != nil {
